@@ -13,6 +13,8 @@ namespace JokesWebApp.Models
 
         public string Answer { get; set; }
 
+        public int Rank { get; set; }
+
         public Joke()
         {
 
