@@ -10,23 +10,36 @@
     <h4>KnockKnockJoke</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PunchLine)
+
+        <dt class="col-sm-2">
+            Knock Knock!
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PunchLine)
+        <dd class="col-sm-10">
+            Knock Knock!
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PunchLineQuestion)
+        <dt class="col-sm-2">
+            Who's there?
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            Who's there?
+        </dd>
+        <dt class="col-sm-2">
+            Answer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WhoIsThereAnswer)
+        </dd>
+        <dt class="col-sm-2">
+            Answer who?
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PunchLineQuestion)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WhoIsThereAnswer)
+        <dt class="col-sm-2">
+            Punch Line
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WhoIsThereAnswer)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PunchLine)
         </dd>
     </dl>
 </div>

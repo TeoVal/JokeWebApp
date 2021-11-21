@@ -13,13 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PunchLine)
+                Knock Knock!
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PunchLineQuestion)
+                Who's there?
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.WhoIsThereAnswer)
+                Answer
+            </th>
+            <th>
+                Answer who?
+            </th>
+            <th>
+                Punch Line
             </th>
             <th></th>
         </tr>
@@ -28,13 +34,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PunchLine)
+                Knock Knock!
+            </td>
+            <td>
+                Who's there?
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhoIsThereAnswer)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PunchLineQuestion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.WhoIsThereAnswer)
+                @Html.DisplayFor(modelItem => item.PunchLine)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

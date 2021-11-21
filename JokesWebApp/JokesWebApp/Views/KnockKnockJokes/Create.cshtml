@@ -6,26 +6,33 @@
 
 <h1>Create</h1>
 
-<h4>KnockKnockJoke</h4>
+<h4>Knock Knock Joke</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PunchLine" class="control-label"></label>
-                <input asp-for="PunchLine" class="form-control" />
-                <span asp-validation-for="PunchLine" class="text-danger"></span>
+
+            <div class="font-weight-bold">
+                <p>Knock Knock!</p>
+            </div>
+            <div class="font-weight-bold">
+                <p>Who's there?</p>
             </div>
             <div class="form-group">
-                <label asp-for="PunchLineQuestion" class="control-label"></label>
+                <label asp-for="WhoIsThereAnswer" class="control-label">Answer</label>
+                <input id="answerInput" asp-for="WhoIsThereAnswer" class="form-control" />
+                <span asp-validation-for="WhoIsThereAnswer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label id="answerWhoLabel" asp-for="PunchLineQuestion" class="control-label">... Who?</label>
                 <input asp-for="PunchLineQuestion" class="form-control" />
                 <span asp-validation-for="PunchLineQuestion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="WhoIsThereAnswer" class="control-label"></label>
-                <input asp-for="WhoIsThereAnswer" class="form-control" />
-                <span asp-validation-for="WhoIsThereAnswer" class="text-danger"></span>
+                <label asp-for="PunchLine" class="control-label">Punch Line</label>
+                <input asp-for="PunchLine" class="form-control" />
+                <span asp-validation-for="PunchLine" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -37,6 +44,17 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+
+    let answerInput = document.getElementById('answerInput');
+
+    answerInput.addEventListener('change', (event) => {
+        let AnswerWhoLabel = document.getElementById('answerWhoLabel');
+        AnswerWhoLabel.innerHTML = answerInput.value + ' who?';
+    });
+
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
