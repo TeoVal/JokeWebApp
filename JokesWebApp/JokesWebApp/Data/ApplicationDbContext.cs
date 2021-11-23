@@ -15,6 +15,5 @@ namespace JokesWebApp.Data
         }
         public DbSet<JokesWebApp.Models.Joke> Joke { get; set; }
         public DbSet<JokesWebApp.Models.KnockKnockJoke> KnockKnockJoke { get; set; }
-        public DbSet<JokesWebApp.Models.KnockKnockPlayback> KnockKnockPlayback { get; set; }
     }
 }

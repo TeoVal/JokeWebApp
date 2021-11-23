@@ -13,6 +13,8 @@ namespace JokesWebApp.Models
 
         public string PunchLine { get; set; }
 
+        public string Name { get; set; }
+
         public KnockKnockJoke()
         {
 

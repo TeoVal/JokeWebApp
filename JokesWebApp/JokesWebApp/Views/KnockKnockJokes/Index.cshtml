@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                Joke Name
+            </th>
+            <th>
                 Knock Knock!
             </th>
             <th>
@@ -33,6 +36,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                <a asp-controller="KnockKnockPlayback" asp-action="Index">@Html.DisplayFor(modelItem => item.Name)</a>
+            </td>
             <td>
                 Knock Knock!
             </td>

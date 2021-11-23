@@ -54,7 +54,7 @@ namespace JokesWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PunchLine,PunchLineQuestion,WhoIsThereAnswer")] KnockKnockJoke knockKnockJoke)
+        public async Task<IActionResult> Create([Bind("Id,PunchLine,PunchLineQuestion,WhoIsThereAnswer,Name")] KnockKnockJoke knockKnockJoke)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace JokesWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PunchLine,PunchLineQuestion,WhoIsThereAnswer")] KnockKnockJoke knockKnockJoke)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PunchLine,PunchLineQuestion,WhoIsThereAnswer,Name")] KnockKnockJoke knockKnockJoke)
         {
             if (id != knockKnockJoke.Id)
             {
