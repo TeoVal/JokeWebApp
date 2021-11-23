@@ -37,7 +37,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-controller="KnockKnockPlayback" asp-action="Index">@Html.DisplayFor(modelItem => item.Name)</a>
+                <a asp-controller="KnockKnockPlayback" asp-route-id="@item.Id" asp-action="Index">@Html.DisplayFor(modelItem => item.Name)</a>
             </td>
             <td>
                 Knock Knock!

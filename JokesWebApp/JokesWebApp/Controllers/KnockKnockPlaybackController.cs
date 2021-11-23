@@ -1,4 +1,5 @@
 ﻿using JokesWebApp.Data;
+using JokesWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,9 +18,22 @@ namespace JokesWebApp.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var joke = await _context.Joke.FirstOrDefaultAsync(j => j.Id == id);
+
+            if (joke == null)
+            {
+                return NotFound();
+            }
+
             return View();
+
         }
     }
 }
