@@ -11,8 +11,6 @@ namespace JokesWebApp.Models
 
         public string WhoIsThereAnswer { get; set; }
 
-        public string PunchLineQuestion { get; set; }
-
         public string PunchLine { get; set; }
 
         public KnockKnockJoke()
