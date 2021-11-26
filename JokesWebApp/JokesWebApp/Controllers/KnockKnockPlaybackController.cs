@@ -1,5 +1,7 @@
 ﻿using JokesWebApp.Data;
+using JokesWebApp.Dtos;
 using JokesWebApp.Models;
+using JokesWebApp.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,11 +13,11 @@ namespace JokesWebApp.Controllers
 {
     public class KnockKnockPlaybackController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IKnockJokeService knockJokeService;
 
-        public KnockKnockPlaybackController(ApplicationDbContext context)
+        public KnockKnockPlaybackController(IKnockJokeService knockJokeService)
         {
-            _context = context;
+            this.knockJokeService = knockJokeService;
         }
 
         public async Task<IActionResult> Index(int? id)
@@ -25,14 +27,14 @@ namespace JokesWebApp.Controllers
                 return NotFound();
             }
 
-            var joke = await _context.Joke.FirstOrDefaultAsync(j => j.Id == id);
+            KnockKnockPlaybackDto dto = knockJokeService.GetJokeStep(id, 1);
 
-            if (joke == null)
+            if (dto == null)
             {
                 return NotFound();
             }
 
-            return View();
+            return View(dto);
 
         }
     }
