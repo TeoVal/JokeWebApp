@@ -9,5 +9,6 @@ namespace JokesWebApp.Services
     public interface IKnockJokeService
     {
         KnockKnockPlaybackDto GetJokeStep(int? jokeId, int? stepNumber); 
+          
     }
 }

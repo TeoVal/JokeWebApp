@@ -27,7 +27,7 @@ namespace JokesWebApp.Controllers
                 return NotFound();
             }
 
-            KnockKnockPlaybackDto dto = knockJokeService.GetJokeStep(id, 1);
+            KnockKnockPlaybackDto dto = knockJokeService.GetJokeStep(id, 0);
 
             if (dto == null)
             {
