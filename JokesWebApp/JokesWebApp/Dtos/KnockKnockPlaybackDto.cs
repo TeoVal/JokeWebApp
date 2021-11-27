@@ -7,8 +7,12 @@ namespace JokesWebApp.Dtos
 {
     public class KnockKnockPlaybackDto
     {
-        public int StepNumber { get; set; }
+        public int CurrentStep { get; set; }
 
         public string TextToShow { get; set; }
+
+        public int JokeId { get; set; }
+
+        public int? NextStep { get; set; }
     }
 }

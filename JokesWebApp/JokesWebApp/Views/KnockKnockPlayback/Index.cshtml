@@ -9,4 +9,10 @@
 
     @Html.DisplayFor(Model => Model.TextToShow)
 
+
+    @if (Model.NextStep != null)
+    {
+        @Html.RouteLink("Next", new { action = "Index", controller = "KnockKnockPlayback", stepIndex = Model.NextStep })
+    }
+
 </div>

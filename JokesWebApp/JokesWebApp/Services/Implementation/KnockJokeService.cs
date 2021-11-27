@@ -26,16 +26,29 @@ namespace JokesWebApp.Services.Implementation
                 return null;
             }
 
-            KnockKnockPlaybackDto dto = GetStepProperty(stepIndex, joke);
+            KnockKnockPlaybackDto dto = GetStepDto(stepIndex, joke);
             return dto;
         }
 
 
-        private KnockKnockPlaybackDto GetStepProperty(int? stepIndex, KnockKnockJoke joke)
+        private KnockKnockPlaybackDto GetStepDto(int? stepIndex, KnockKnockJoke joke)
         {
             KnockKnockPlaybackDto dto = new KnockKnockPlaybackDto();
+            dto.JokeId = joke.Id;
 
-            switch (stepIndex)
+            if(stepIndex == null)
+            {
+                dto.CurrentStep = 0;
+            }
+            else
+            {
+                dto.CurrentStep = stepIndex.Value;
+            }
+
+            dto.NextStep = dto.CurrentStep + 1;
+
+
+            switch (dto.CurrentStep)
             {
                 case 0:
                     dto.TextToShow = "Knock knock!";
@@ -51,6 +64,7 @@ namespace JokesWebApp.Services.Implementation
                     break;
                 case 4:
                     dto.TextToShow = joke.PunchLine;
+                    dto.NextStep = null;
                     break;
             }
             return dto;
